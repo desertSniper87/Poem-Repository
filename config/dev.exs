@@ -2,8 +2,8 @@ import Config
 
 # Configure your database
 config :poem_repo, PoemRepo.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "bccca",
+  password: "bccca",
   hostname: "localhost",
   database: "poem_repo_dev",
   stacktrace: true,
