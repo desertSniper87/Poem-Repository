@@ -1,0 +1,22 @@
+poems: {
+  shape: sql_table
+  id: int {constraint: primary_key}
+  title: string
+  content: text
+}
+
+recitations{
+  shape: sql_table
+  id: int {constraint: primary_key}
+  url: string
+}
+
+poets: {
+  shape: sql_table
+  id: int {constraint: primary_key}
+  name: string
+  dob: date
+}
+
+poems.poet -> poets.id
+poems.recitation -> recitations.id

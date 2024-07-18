@@ -1,0 +1,17 @@
+[
+  {
+    "label": "Run phoenix server",
+    "command": "mix phx.server",
+    // "env": { "foo": "bar" },
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  },
+  {
+    "label": "Compile D2 Diagram",
+    "command": "d2 ./docs/diagram.d2 ./docs/diagram.png",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  }
+]
