@@ -1,0 +1,8 @@
+<.header>
+  New Poem
+  <:subtitle>Use this form to manage poem records in your database.</:subtitle>
+</.header>
+
+<.poem_form changeset={@changeset} action={~p"/poems"} />
+
+<.back navigate={~p"/poems"}>Back to poems</.back>

@@ -1,0 +1,15 @@
+<.header>
+  Poem <%= @poem.id %>
+  <:subtitle>This is a poem record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/poems/#{@poem}/edit"}>
+      <.button>Edit poem</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Title"><%= @poem.title %></:item>
+</.list>
+
+<.back navigate={~p"/poems"}>Back to poems</.back>

@@ -1,0 +1,23 @@
+<.header>
+  Listing Poems
+  <:actions>
+    <.link href={~p"/poems/new"}>
+      <.button>New Poem</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="poems" rows={@poems} row_click={&JS.navigate(~p"/poems/#{&1}")}>
+  <:col :let={poem} label="Title"><%= poem.title %></:col>
+  <:action :let={poem}>
+    <div class="sr-only">
+      <.link navigate={~p"/poems/#{poem}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/poems/#{poem}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={poem}>
+    <.link href={~p"/poems/#{poem}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>
