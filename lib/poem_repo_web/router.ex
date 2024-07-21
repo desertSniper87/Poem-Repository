@@ -19,6 +19,9 @@ defmodule PoemRepoWeb.Router do
 
     get "/", PageController, :home
     get "/index", PageController, :index
+
+    resources "/poems", PoemController
+
   end
 
   # Other scopes may use custom stacks.

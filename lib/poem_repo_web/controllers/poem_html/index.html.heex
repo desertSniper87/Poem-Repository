@@ -9,6 +9,7 @@
 
 <.table id="poems" rows={@poems} row_click={&JS.navigate(~p"/poems/#{&1}")}>
   <:col :let={poem} label="Title"><%= poem.title %></:col>
+  <:col :let={poem} label="Content"><%= poem.content %></:col>
   <:action :let={poem}>
     <div class="sr-only">
       <.link navigate={~p"/poems/#{poem}"}>Show</.link>

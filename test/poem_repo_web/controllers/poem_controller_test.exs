@@ -3,9 +3,9 @@ defmodule PoemRepoWeb.PoemControllerTest do
 
   import PoemRepo.PoetryFixtures
 
-  @create_attrs %{title: "some title"}
-  @update_attrs %{title: "some updated title"}
-  @invalid_attrs %{title: nil}
+  @create_attrs %{title: "some title", content: "some content"}
+  @update_attrs %{title: "some updated title", content: "some updated content"}
+  @invalid_attrs %{title: nil, content: nil}
 
   describe "index" do
     test "lists all poems", %{conn: conn} do

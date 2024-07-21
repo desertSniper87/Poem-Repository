@@ -17,4 +17,19 @@ defmodule PoemRepo.PoetryFixtures do
 
     poem
   end
+
+  @doc """
+  Generate a poem.
+  """
+  def poem_fixture(attrs \\ %{}) do
+    {:ok, poem} =
+      attrs
+      |> Enum.into(%{
+        content: "some content",
+        title: "some title"
+      })
+      |> PoemRepo.Poetry.create_poem()
+
+    poem
+  end
 end
