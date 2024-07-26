@@ -23,8 +23,10 @@ defmodule PoemRepoWeb.Router do
     get "/", PageController, :home
     get "/index", PageController, :index
 
-    resources "/poems", PoemController
+    resources "/poems", PoemController, only: [:show, :index]
 
+    pipe_through :require_authenticated_user
+    resources "/poems", PoemController, only: [:edit, :new, :create, :update]
   end
 
   # Other scopes may use custom stacks.
