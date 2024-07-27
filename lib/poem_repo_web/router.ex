@@ -23,7 +23,8 @@ defmodule PoemRepoWeb.Router do
     get "/", PageController, :home
     get "/index", PageController, :index
 
-    resources "/poems", PoemController, only: [:show, :index]
+    get "/poems", PoemController, :index
+    get "/poems/:id", PoemController, :show
 
     pipe_through :require_authenticated_user
     resources "/poems", PoemController, only: [:edit, :new, :create, :update]
