@@ -14,45 +14,45 @@ msgstr ""
 #: lib/poem_repo_web/components/core_components.ex:482
 #, elixir-autogen, elixir-format
 msgid "Actions"
-msgstr ""
+msgstr "ক্রিয়াগুলি"
 
 #: lib/poem_repo_web/components/core_components.ex:160
 #, elixir-autogen, elixir-format
 msgid "Attempting to reconnect"
-msgstr ""
+msgstr "পুনঃ সংযোগের চেষ্টা করা হচ্ছে"
 
 #: lib/poem_repo_web/components/core_components.ex:151
 #, elixir-autogen, elixir-format
 msgid "Error!"
-msgstr ""
+msgstr "ত্রুটি!"
 
 #: lib/poem_repo_web/components/core_components.ex:172
 #, elixir-autogen, elixir-format
 msgid "Hang in there while we get back on track"
-msgstr ""
+msgstr "আমরা ফিরে আসার চেষ্টা করছি, কিছুক্ষণ অপেক্ষা করুন"
 
 #: lib/poem_repo_web/components/layouts/root.html.heex:51
 #, elixir-autogen, elixir-format
 msgid "Log In"
-msgstr "লগইন"
+msgstr "লগ ইন"
 
 #: lib/poem_repo_web/components/core_components.ex:167
 #, elixir-autogen, elixir-format
 msgid "Something went wrong!"
-msgstr ""
+msgstr "কিছু ভুল হয়েছে!"
 
 #: lib/poem_repo_web/components/core_components.ex:150
 #, elixir-autogen, elixir-format
 msgid "Success!"
-msgstr ""
+msgstr "সফল!"
 
 #: lib/poem_repo_web/components/core_components.ex:155
 #, elixir-autogen, elixir-format
 msgid "We can't find the internet"
-msgstr ""
+msgstr "ইন্টারনেট খুঁজে পাওয়া যাচ্ছে না"
 
 #: lib/poem_repo_web/components/core_components.ex:76
 #: lib/poem_repo_web/components/core_components.ex:130
 #, elixir-autogen, elixir-format
 msgid "close"
-msgstr ""
+msgstr "বন্ধ করুন"
