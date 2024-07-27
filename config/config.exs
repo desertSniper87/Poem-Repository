@@ -22,6 +22,8 @@ config :poem_repo, PoemRepoWeb.Endpoint,
   pubsub_server: PoemRepo.PubSub,
   live_view: [signing_salt: "7bZwpUN0"]
 
+config :poem_repo, PoemRepoWeb.Gettext, locales: ~w(bn, en)
+
 # Configures the mailer
 #
 # By default it uses the "Local" adapter which stores the emails
