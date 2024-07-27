@@ -27,7 +27,7 @@ defmodule PoemRepoWeb.Router do
     get "/poems/:id", PoemController, :show
 
     pipe_through :require_authenticated_user
-    resources "/poems", PoemController, only: [:edit, :new, :create, :update]
+    resources "/poems", PoemController, only: [:edit, :new, :create, :update, :delete]
   end
 
   # Other scopes may use custom stacks.

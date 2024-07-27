@@ -3,7 +3,6 @@ defmodule PoemRepo.Repo.Migrations.CreatePoems do
 
   def change do
     create table(:poems) do
-      add :title, :string
       add :content, :string
 
       timestamps(type: :utc_datetime)
