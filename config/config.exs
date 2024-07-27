@@ -22,7 +22,9 @@ config :poem_repo, PoemRepoWeb.Endpoint,
   pubsub_server: PoemRepo.PubSub,
   live_view: [signing_salt: "7bZwpUN0"]
 
-config :poem_repo, PoemRepoWeb.Gettext, locales: ~w(bn, en)
+config :poem_repo, PoemRepoWeb.Gettext,
+  locales: ~w(bn en),
+  default_locale: "bn"
 
 # Configures the mailer
 #
