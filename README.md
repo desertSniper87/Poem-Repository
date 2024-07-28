@@ -1,6 +1,6 @@
 ## TODO
 
-- [ ] Add i18n
+- [x] Add i18n
 - [ ] Update header.
 - [ ] Create a poem view page.
 
