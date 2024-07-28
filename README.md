@@ -1,7 +1,7 @@
 ## TODO
 
 - [x] Add i18n
-- [ ] Update header.
+- [x] Update header.
 - [ ] Create a poem view page.
 
 # PoemRepo
