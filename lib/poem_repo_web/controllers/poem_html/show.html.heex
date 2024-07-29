@@ -1,16 +1,35 @@
 <.header>
-  Poem <%= @poem.id %>
-  <:subtitle>This is a poem record from your database.</:subtitle>
+  <%= @poem.title %>
+  <:subtitle>By <%= @poem.poet.name %></:subtitle>
   <:actions>
-    <.link href={~p"/poems/#{@poem}/edit"}>
+    <.link href={~p"/poems/#{@poem.id}/edit"}>
       <.button>Edit poem</.button>
     </.link>
   </:actions>
 </.header>
 
-<.list>
-  <:item title="Title"><%= @poem.title %></:item>
-  <:item title="Content"><%= @poem.content %></:item>
-</.list>
+<div class="mt-8 bg-white shadow-sm rounded-lg overflow-hidden">
+  <div class="px-4 py-5 sm:p-6">
+    <div class="prose max-w-none">
+      <%= for line <- String.split(@poem.content, "\n") do %>
+        <p><%= line %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<.back navigate={~p"/poems"}>Back to poems</.back>
+<div class="mt-6">
+  <h3 class="text-lg font-medium text-gray-900">About the Poet</h3>
+  <div class="mt-2 bg-white shadow-sm rounded-lg overflow-hidden">
+    <div class="px-4 py-5 sm:p-6">
+      <p class="text-sm text-gray-500"><%= @poem.poet.bio %></p>
+    </div>
+  </div>
+</div>
+
+<div class="mt-6 flex items-center justify-between">
+  <.back navigate={~p"/poems"}>Back to poems</.back>
+  <.link href={~p"/poets/#{@poem.poet.id}"}>
+    <.button>View more by this poet</.button>
+  </.link>
+</div>

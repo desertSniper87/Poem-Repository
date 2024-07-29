@@ -1,8 +1,9 @@
 ## TODO
 
+- [ ] Add poet module
+- [ ] Create a poem view page.
 - [x] Add i18n
 - [x] Update header.
-- [ ] Create a poem view page.
 
 # PoemRepo
 
