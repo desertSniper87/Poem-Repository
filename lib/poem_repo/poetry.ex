@@ -117,6 +117,14 @@ defmodule PoemRepo.Poetry do
     Repo.all(Poet)
   end
 
+  def list_poets_enum do
+    Repo.all(
+      from p in Poet,
+        # TODO: FIX
+        select: {p.id, p.name}
+    )
+  end
+
   @doc """
   Gets a single poet.
 

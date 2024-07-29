@@ -15,5 +15,6 @@ defmodule PoemRepo.Poetry.Poem do
     poem
     |> cast(attrs, [:title, :content, :poet_id])
     |> validate_required([:title, :content, :poet_id])
+    |> foreign_key_constraint(:poet_id)
   end
 end

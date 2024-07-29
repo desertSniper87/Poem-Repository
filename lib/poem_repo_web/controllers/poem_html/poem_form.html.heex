@@ -4,6 +4,13 @@
   </.error>
   <.input field={f[:title]} type="text" label="Title" />
   <.input field={f[:content]} type="textarea" label="Content" style="height: 180px" />
+  <.input
+    field={f[:poet_id]}
+    type="select"
+    label="Poet"
+    prompt="Choose a poet"
+    options={PoemRepo.Poetry.list_poets_enum()}
+  />
   <:actions>
     <.button>Save Poem</.button>
   </:actions>
