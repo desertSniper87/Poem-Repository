@@ -7,6 +7,7 @@ defmodule PoemRepo.Poetry.Poet do
     field :bio, :string
     field :birth_date, :date
     field :death_date, :date
+    has_many :poems, PoemRepo.Poetry.Poem
 
     timestamps(type: :utc_datetime)
   end
@@ -15,6 +16,6 @@ defmodule PoemRepo.Poetry.Poet do
   def changeset(poet, attrs) do
     poet
     |> cast(attrs, [:name, :bio, :birth_date, :death_date])
-    |> validate_required([:name, :bio, :birth_date, :death_date])
+    |> validate_required([:name, :birth_date])
   end
 end

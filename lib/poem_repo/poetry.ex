@@ -197,4 +197,16 @@ defmodule PoemRepo.Poetry do
   def change_poet(%Poet{} = poet, attrs \\ %{}) do
     Poet.changeset(poet, attrs)
   end
+
+  def list_poems_by_poet(poet_id) do
+    Poem
+    |> where(poet_id: ^poet_id)
+    |> Repo.all()
+  end
+
+  def get_poem_with_poet!(id) do
+    Poem
+    |> Repo.get!(id)
+    |> Repo.preload(:poet)
+  end
 end

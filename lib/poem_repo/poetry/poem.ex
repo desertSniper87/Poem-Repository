@@ -5,6 +5,7 @@ defmodule PoemRepo.Poetry.Poem do
   schema "poems" do
     field :title, :string
     field :content, :string
+    belongs_to :poet, PoemRepo.Poetry.Poet
 
     timestamps(type: :utc_datetime)
   end
@@ -12,7 +13,7 @@ defmodule PoemRepo.Poetry.Poem do
   @doc false
   def changeset(poem, attrs) do
     poem
-    |> cast(attrs, [:title, :content])
-    |> validate_required([:title, :content])
+    |> cast(attrs, [:title, :content, :poet_id])
+    |> validate_required([:title, :content, :poet_id])
   end
 end

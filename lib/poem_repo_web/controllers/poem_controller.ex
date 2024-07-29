@@ -11,7 +11,8 @@ defmodule PoemRepoWeb.PoemController do
 
   def new(conn, _params) do
     changeset = Poetry.change_poem(%Poem{})
-    render(conn, :new, changeset: changeset)
+    poets = Poetry.list_poets()
+    render(conn, :new, changeset: changeset, poets: poets)
   end
 
   def create(conn, %{"poem" => poem_params}) do
