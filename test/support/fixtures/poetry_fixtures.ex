@@ -32,4 +32,21 @@ defmodule PoemRepo.PoetryFixtures do
 
     poem
   end
+
+  @doc """
+  Generate a poet.
+  """
+  def poet_fixture(attrs \\ %{}) do
+    {:ok, poet} =
+      attrs
+      |> Enum.into(%{
+        bio: "some bio",
+        birth_date: ~D[2024-07-28],
+        death_date: ~D[2024-07-28],
+        name: "some name"
+      })
+      |> PoemRepo.Poetry.create_poet()
+
+    poet
+  end
 end

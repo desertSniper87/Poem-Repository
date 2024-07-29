@@ -1,0 +1,18 @@
+<.header>
+  Poet <%= @poet.id %>
+  <:subtitle>This is a poet record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/poets/#{@poet}/edit"}>
+      <.button>Edit poet</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Name"><%= @poet.name %></:item>
+  <:item title="Bio"><%= @poet.bio %></:item>
+  <:item title="Birth date"><%= @poet.birth_date %></:item>
+  <:item title="Death date"><%= @poet.death_date %></:item>
+</.list>
+
+<.back navigate={~p"/poets"}>Back to poets</.back>

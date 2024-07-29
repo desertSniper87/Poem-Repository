@@ -1,0 +1,26 @@
+<.header>
+  Listing Poets
+  <:actions>
+    <.link href={~p"/poets/new"}>
+      <.button>New Poet</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="poets" rows={@poets} row_click={&JS.navigate(~p"/poets/#{&1}")}>
+  <:col :let={poet} label="Name"><%= poet.name %></:col>
+  <:col :let={poet} label="Bio"><%= poet.bio %></:col>
+  <:col :let={poet} label="Birth date"><%= poet.birth_date %></:col>
+  <:col :let={poet} label="Death date"><%= poet.death_date %></:col>
+  <:action :let={poet}>
+    <div class="sr-only">
+      <.link navigate={~p"/poets/#{poet}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/poets/#{poet}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={poet}>
+    <.link href={~p"/poets/#{poet}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

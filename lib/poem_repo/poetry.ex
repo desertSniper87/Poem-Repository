@@ -101,4 +101,100 @@ defmodule PoemRepo.Poetry do
   def change_poem(%Poem{} = poem, attrs \\ %{}) do
     Poem.changeset(poem, attrs)
   end
+
+  alias PoemRepo.Poetry.Poet
+
+  @doc """
+  Returns the list of poets.
+
+  ## Examples
+
+      iex> list_poets()
+      [%Poet{}, ...]
+
+  """
+  def list_poets do
+    Repo.all(Poet)
+  end
+
+  @doc """
+  Gets a single poet.
+
+  Raises `Ecto.NoResultsError` if the Poet does not exist.
+
+  ## Examples
+
+      iex> get_poet!(123)
+      %Poet{}
+
+      iex> get_poet!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_poet!(id), do: Repo.get!(Poet, id)
+
+  @doc """
+  Creates a poet.
+
+  ## Examples
+
+      iex> create_poet(%{field: value})
+      {:ok, %Poet{}}
+
+      iex> create_poet(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_poet(attrs \\ %{}) do
+    %Poet{}
+    |> Poet.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a poet.
+
+  ## Examples
+
+      iex> update_poet(poet, %{field: new_value})
+      {:ok, %Poet{}}
+
+      iex> update_poet(poet, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_poet(%Poet{} = poet, attrs) do
+    poet
+    |> Poet.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a poet.
+
+  ## Examples
+
+      iex> delete_poet(poet)
+      {:ok, %Poet{}}
+
+      iex> delete_poet(poet)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_poet(%Poet{} = poet) do
+    Repo.delete(poet)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking poet changes.
+
+  ## Examples
+
+      iex> change_poet(poet)
+      %Ecto.Changeset{data: %Poet{}}
+
+  """
+  def change_poet(%Poet{} = poet, attrs \\ %{}) do
+    Poet.changeset(poet, attrs)
+  end
 end
