@@ -5,7 +5,7 @@ defmodule PoemRepoWeb.PoemController do
   alias PoemRepo.Poetry.Poem
 
   def index(conn, _params) do
-    poems = Poetry.list_poems()
+    poems = Poetry.list_poems(:poet)
     render(conn, :index, poems: poems)
   end
 

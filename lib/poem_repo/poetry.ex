@@ -17,8 +17,8 @@ defmodule PoemRepo.Poetry do
       [%Poem{}, ...]
 
   """
-  def list_poems do
-    Repo.all(Poem)
+  def list_poems(preloads \\ []) do
+    Repo.all(Poem) |> Repo.preload(preloads)
   end
 
   @doc """
