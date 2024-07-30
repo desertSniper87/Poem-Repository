@@ -35,7 +35,10 @@ defmodule PoemRepo.Poetry do
       ** (Ecto.NoResultsError)
 
   """
-  def get_poem!(id), do: Repo.get!(Poem, id)
+  def get_poem!(id, preloads \\ []) do
+    Repo.get!(Poem, id)
+    |> Repo.preload(preloads)
+  end
 
   @doc """
   Creates a poem.
@@ -49,6 +52,7 @@ defmodule PoemRepo.Poetry do
       {:error, %Ecto.Changeset{}}
 
   """
+
   def create_poem(attrs \\ %{}) do
     %Poem{}
     |> Poem.changeset(attrs)
@@ -121,7 +125,7 @@ defmodule PoemRepo.Poetry do
     Repo.all(
       from p in Poet,
         # TODO: FIX
-        select: {p.id, p.name}
+        select: {p.name, p.id}
     )
   end
 

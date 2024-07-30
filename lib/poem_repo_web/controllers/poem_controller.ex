@@ -27,7 +27,7 @@ defmodule PoemRepoWeb.PoemController do
   end
 
   def show(conn, %{"id" => id}) do
-    poem = Poetry.get_poem!(id)
+    poem = Poetry.get_poem!(id, :poet)
     render(conn, :show, poem: poem)
   end
 
